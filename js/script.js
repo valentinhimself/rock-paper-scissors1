@@ -66,7 +66,7 @@ function game() {
     }
     let playerCounter = 0;
     let computerCounter = 0;
-    for (i=0; i<2; i++) {
+    for (i=0; i<5; i++) {
         playRound();
     }
     let score = `the score is ${playerCounter} to ${computerCounter}`
@@ -89,4 +89,3 @@ function getWinner () {
 let globalScore;
 let startGame = game ();
 let winner = getWinner ();
-
