@@ -5,6 +5,11 @@ let scissors = document.querySelector('.scissors').addEventListener('click', pla
 let globalPlayerSelection;
 
 
+let playerCounter = 0;
+let computerCounter = 0;
+let globalScore = [playerCounter, computerCounter];
+
+
 function playerPlay (e) {
     //get the class of the selection: rock, paper scissors.
     globalPlayerSelection = e.target.className; //.innerText .id .tagName are some others that are available;
@@ -48,7 +53,7 @@ function playRound () {
 function computerPlay () {
 
     /*function selects a random number between 0 and 2 and
-    assigns each to number "Rock", "Paper" and "Scissors" respectively */
+    assigns each number "Rock", "Paper" and "Scissors" respectively */
 
     let num = Math.floor(Math.random() * 3);
     if (num==0) {
@@ -61,10 +66,6 @@ function computerPlay () {
     console.log(`Computer selection is ${num}`)
     return num;
 }
-
-let playerCounter = 0;
-let computerCounter = 0;
-let globalScore = [playerCounter, computerCounter];
 
 function getWinner () {
 globalScore = [playerCounter, computerCounter];

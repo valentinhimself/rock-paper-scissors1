@@ -1,0 +1,10 @@
+:root {
+    background: black;
+}
+.img-container {
+    display: flex;
+    justify-content: space-around;
+}
+.img-container>* {
+    cursor: pointer;
+}
