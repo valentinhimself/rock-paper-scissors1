@@ -1,12 +1,37 @@
 let rock = document.querySelector('.rock').addEventListener('click', playerPlay);
 let paper = document.querySelector('.paper').addEventListener('click', playerPlay);
 let scissors = document.querySelector('.scissors').addEventListener('click', playerPlay);
+
+//create a parent variable to append round # to
+const roundsDiv = document.querySelector('.round');
+//create a counter element to be appended to the parent 
+let roundsCounter=document.createElement ('span')
+roundsCounter.style.color = 'white';
+roundsCounter.style.display='inline-block';
+let count = 1; //the number that actually corresponds to the round # 
+roundsCounter.innerText = count;
+roundsDiv.append(roundsCounter);
+
 //create a global variable that will be accessible between functions;
 let globalPlayerSelection;
-
-
-let playerCounter = 0;
 let computerCounter = 0;
+let playerCounter = 0;
+const player = document.querySelector('.player');
+let playerRoundsWon=document.createElement ('span');
+playerRoundsWon.style.color = 'white';
+playerRoundsWon.style.display='inline-block';
+
+playerRoundsWon.innerText = playerCounter;
+player.append(playerRoundsWon);
+
+const computer = document.querySelector('.computer');
+let computerRoundsWon=document.createElement ('span');
+computerRoundsWon.style.color = 'white';
+computerRoundsWon.style.display='inline-block';
+
+computerRoundsWon.innerText=computerCounter;
+computer.append(computerRoundsWon);
+
 let globalScore = [playerCounter, computerCounter];
 
 
@@ -18,7 +43,8 @@ function playerPlay (e) {
     console.log(`Player selection is ${globalPlayerSelection}`)
     //initiate the functon for the round
     playRound();
-    //selection = null;
+
+    roundsCounter.innerText = ++count;
 }
 
 function playRound () {
@@ -38,12 +64,12 @@ function playRound () {
     || (playerSelection == "Scissors" && computerSelection == "Paper")
     || (playerSelection == "Rock" && computerSelection == "Scissors")) {
         str = `You win: ${playerSelection.toLowerCase()} beats ${computerSelection.toLowerCase()}`;
-        playerCounter += 1; 
+        playerRoundsWon.innerText = ++playerCounter; 
         console.log(str);
     }
     else {
         str = `You lose: ${computerSelection.toLowerCase()} beats ${playerSelection.toLowerCase()}`;
-        computerCounter +=1; 
+        computerRoundsWon.innerText = ++computerCounter; 
         console.log(str);
         
     }

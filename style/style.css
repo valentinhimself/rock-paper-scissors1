@@ -1,5 +1,25 @@
 :root {
     background: black;
+    color: white;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.round {
+    align-self: center;
+    font-size: 2em;
+    position: relative;
+    right: 20px;
+    margin-bottom: 50px;
+}
+.caption {
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+    font-size: 2em;
 }
 .img-container {
     display: flex;
@@ -7,4 +27,12 @@
 }
 .img-container>* {
     cursor: pointer;
+}
+
+.scores {
+    font-size: 2em;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 100px;
 }
