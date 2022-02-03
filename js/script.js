@@ -23,7 +23,7 @@ function playerPlay (e) {
     //get the class of the selection: rock, paper scissors.
     globalPlayerSelection = e.target.className; //.innerText .id .tagName are some others that are available;
     e.target.classList.add("scaled");
-    setTimeout(() => e.target.classList.remove("scaled"),200);
+    setTimeout(() => e.target.classList.remove("scaled"),300);
    
     //make the first letter Capital
     globalPlayerSelection = globalPlayerSelection[0].toUpperCase()+globalPlayerSelection.slice(1).toLowerCase();
